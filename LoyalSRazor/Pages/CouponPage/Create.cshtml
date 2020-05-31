@@ -1,0 +1,68 @@
+﻿@page
+@model LoyalSRazor.Pages.CouponPage.CreateModel
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Create</h1>
+
+<h4>Coupon</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="Coupon.Id" class="control-label"></label>
+                <input asp-for="Coupon.Id" class="form-control" />
+                <span asp-validation-for="Coupon.Id" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Coupon.title" class="control-label"></label>
+                <input asp-for="Coupon.title" class="form-control" />
+                <span asp-validation-for="Coupon.title" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Coupon.price" class="control-label"></label>
+                <input asp-for="Coupon.price" class="form-control" />
+                <span asp-validation-for="Coupon.price" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Coupon.photo_path" class="control-label"></label>
+                <input asp-for="Coupon.photo_path" class="form-control" />
+                <span asp-validation-for="Coupon.photo_path" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Coupon.buy_time" class="control-label"></label>
+                <input asp-for="Coupon.buy_time" class="form-control" />
+                <span asp-validation-for="Coupon.buy_time" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Coupon.date_of_start" class="control-label"></label>
+                <input asp-for="Coupon.date_of_start" class="form-control" />
+                <span asp-validation-for="Coupon.date_of_start" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Coupon.date_of_end" class="control-label"></label>
+                <input asp-for="Coupon.date_of_end" class="form-control" />
+                <span asp-validation-for="Coupon.date_of_end" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Coupon.PlaceId" class="control-label"></label>
+                <select asp-for="Coupon.PlaceId" class ="form-control" asp-items="ViewBag.PlaceId"></select>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-page="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

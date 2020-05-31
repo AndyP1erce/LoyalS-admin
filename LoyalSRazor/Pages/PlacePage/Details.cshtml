@@ -1,0 +1,73 @@
+﻿@page
+@model LoyalSRazor.Pages.PlacePage.DetailsModel
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Details</h1>
+
+<div>
+    <h4>Place</h4>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Place.title)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Place.title)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Place.rating)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Place.rating)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Place.city)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Place.city)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Place.adress)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Place.adress)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Place.working_hours)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Place.working_hours)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Place.phone)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Place.phone)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Place.average_cost)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Place.average_cost)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Place.category)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Place.category)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Place.photo_path)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Place.photo_path)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-page="./Edit" asp-route-id="@Model.Place.Id">Edit</a> |
+    <a asp-page="./Index">Back to List</a>
+</div>

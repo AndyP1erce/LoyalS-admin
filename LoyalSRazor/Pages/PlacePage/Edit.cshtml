@@ -1,0 +1,75 @@
+﻿@page
+@model LoyalSRazor.Pages.PlacePage.EditModel
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h1>Edit</h1>
+
+<h4>Place</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="Place.Id" />
+            <div class="form-group">
+                <label asp-for="Place.title" class="control-label"></label>
+                <input asp-for="Place.title" class="form-control" />
+                <span asp-validation-for="Place.title" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Place.rating" class="control-label"></label>
+                <input asp-for="Place.rating" class="form-control" />
+                <span asp-validation-for="Place.rating" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Place.city" class="control-label"></label>
+                <input asp-for="Place.city" class="form-control" />
+                <span asp-validation-for="Place.city" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Place.adress" class="control-label"></label>
+                <input asp-for="Place.adress" class="form-control" />
+                <span asp-validation-for="Place.adress" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Place.working_hours" class="control-label"></label>
+                <input asp-for="Place.working_hours" class="form-control" />
+                <span asp-validation-for="Place.working_hours" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Place.phone" class="control-label"></label>
+                <input asp-for="Place.phone" class="form-control" />
+                <span asp-validation-for="Place.phone" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Place.average_cost" class="control-label"></label>
+                <input asp-for="Place.average_cost" class="form-control" />
+                <span asp-validation-for="Place.average_cost" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Place.category" class="control-label"></label>
+                <input asp-for="Place.category" class="form-control" />
+                <span asp-validation-for="Place.category" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Place.photo_path" class="control-label"></label>
+                <input asp-for="Place.photo_path" class="form-control" />
+                <span asp-validation-for="Place.photo_path" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-page="./Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

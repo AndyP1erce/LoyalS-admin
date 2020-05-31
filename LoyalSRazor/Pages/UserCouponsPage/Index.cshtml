@@ -1,0 +1,102 @@
+﻿@page
+@model LoyalSRazor.Pages.UserCouponsPage.IndexModel
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-page="Create">Create New</a>
+</p>
+<table id="myTable2" class="table">
+    <thead>
+        <tr>
+            <th onclick="sort(0)">
+                @Html.DisplayNameFor(model => model.UserCoupons[0].date_of_buy)
+            </th>
+            <th onclick="sort(1)">
+                @Html.DisplayNameFor(model => model.UserCoupons[0].MobileAppUser)
+            </th>
+            <th onclick="sort(2)">
+                @Html.DisplayNameFor(model => model.UserCoupons[0].Coupon)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model.UserCoupons)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.date_of_buy)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.MobileAppUser.Id)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Coupon.Id)
+                </td>
+                <td>
+                    @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
+                    @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
+                    @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+@section Scripts
+{
+    <script>
+        function sort(n) {
+            var table, rows, switching, i, x, y, shouldSwitch, dir, switchcount = 0;
+            table = document.getElementById("myTable2");
+            switching = true;
+            dir = "asc";
+
+            while (switching) {
+
+                switching = false;
+                rows = table.rows;
+
+                for (i = 1; i < (rows.length - 1); i++) {
+
+                    shouldSwitch = false;
+
+                    x = rows[i].getElementsByTagName("TD")[n];
+                    y = rows[i + 1].getElementsByTagName("TD")[n];
+
+                    if (dir == "asc") {
+                        if (x.innerHTML.toLowerCase() > y.innerHTML.toLowerCase()) {
+
+                            shouldSwitch = true;
+                            break;
+                        }
+                    } else if (dir == "desc") {
+                        if (x.innerHTML.toLowerCase() < y.innerHTML.toLowerCase()) {
+
+                            shouldSwitch = true;
+                            break;
+                        }
+                    }
+                }
+                if (shouldSwitch) {
+
+                    rows[i].parentNode.insertBefore(rows[i + 1], rows[i]);
+                    switching = true;
+
+                    switchcount++;
+                } else {
+
+                    if (switchcount == 0 && dir == "asc") {
+                        dir = "desc";
+                        switching = true;
+                    }
+                }
+            }
+        }
+    </script>
+}

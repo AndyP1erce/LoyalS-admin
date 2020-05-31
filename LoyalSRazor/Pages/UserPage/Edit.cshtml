@@ -1,0 +1,70 @@
+﻿@page
+@model LoyalSRazor.Pages.UserPage.EditModel
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h1>Edit</h1>
+
+<h4>MobileAppUser</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="MobileAppUser.Id" />
+            <div class="form-group">
+                <label asp-for="MobileAppUser.name" class="control-label"></label>
+                <input asp-for="MobileAppUser.name" class="form-control" />
+                <span asp-validation-for="MobileAppUser.name" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="MobileAppUser.email" class="control-label"></label>
+                <input asp-for="MobileAppUser.email" class="form-control" />
+                <span asp-validation-for="MobileAppUser.email" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="MobileAppUser.password" class="control-label"></label>
+                <input asp-for="MobileAppUser.password" class="form-control" />
+                <span asp-validation-for="MobileAppUser.password" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="MobileAppUser.salt" class="control-label"></label>
+                <input asp-for="MobileAppUser.salt" class="form-control" />
+                <span asp-validation-for="MobileAppUser.salt" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="MobileAppUser.token" class="control-label"></label>
+                <input asp-for="MobileAppUser.token" class="form-control" />
+                <span asp-validation-for="MobileAppUser.token" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="MobileAppUser.current_balance" class="control-label"></label>
+                <input asp-for="MobileAppUser.current_balance" class="form-control" />
+                <span asp-validation-for="MobileAppUser.current_balance" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="MobileAppUser.photo_path" class="control-label"></label>
+                <input asp-for="MobileAppUser.photo_path" class="form-control" />
+                <span asp-validation-for="MobileAppUser.photo_path" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="MobileAppUser.date_of_reg" class="control-label"></label>
+                <input asp-for="MobileAppUser.date_of_reg" class="form-control" />
+                <span asp-validation-for="MobileAppUser.date_of_reg" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-page="./Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
